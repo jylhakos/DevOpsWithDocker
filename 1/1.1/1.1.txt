@@ -1,0 +1,20 @@
+$ docker container run -d nginx
+
+$ docker container ls | grep nginx
+
+$ docker container stop <CONTAINER>
+
+$ docker ps -a | grep nginx
+
+b425f616b193   nginx	"/docker-entrypoint.…"   3 minutes ago   Exited (0) About a minute ago flamboyant_jang
+75971638b9a7   nginx	"/docker-entrypoint.…"   3 minutes ago   Up 3 minutes 80/tcp vibrant_tu
+be179fd5f93b   nginx	"/docker-entrypoint.…"   8 minutes ago   Exited (0) 2 minutes ago funny_heisenberg
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+$ docker container ls -a
+
+$ docker container stop <CONTAINER>
+
+$ docker container rm <CONTAINER>
+
+$ docker image ls
+
+$ docker image ls | grep nginx
+
+$ docker image rm <IMAGE>
