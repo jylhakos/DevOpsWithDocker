@@ -1,3 +1,7 @@
+$ docker container run -d nginx
+
+The -d flag starts a container detached
+
 $ docker container ls -a
 
 $ docker container stop <CONTAINER>
