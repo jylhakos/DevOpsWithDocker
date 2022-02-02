@@ -79,6 +79,8 @@ $ docker image ls
 
 ```
 
+We can search for images in the Docker Hub with docker search <IMAGE> command. 
+
 ## Dockerfile
 
 Dockerfile uses syntax like the following script for building an image.

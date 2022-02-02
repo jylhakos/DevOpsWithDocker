@@ -62,3 +62,8 @@ $ docker run -it --name ubuntu ubuntu sh -c 'apt-get update && apt-get install -
 ```
 
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.4/1.4.png?raw=true)
+
+## 1.5
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.5/1.5.png?raw=true)
+

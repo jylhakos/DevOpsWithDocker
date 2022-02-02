@@ -1,0 +1,17 @@
+$ docker pull devopsdockeruh/simple-web-service:ubuntu
+
+$ docker run -it devopsdockeruh/simple-web-service:ubuntu
+
+$ docker pull devopsdockeruh/simple-web-service:alpine
+
+$ docker run -it devopsdockeruh/simple-web-service:alpine
+
+$ docker container ls -a | grep ubuntu
+
+$ docker container ls -a | grep alpine
+
+$ docker exec -it <IMAGE> sh
+
+/usr/src/app # tail -f ./text.log
+
+
