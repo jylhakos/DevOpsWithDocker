@@ -53,3 +53,12 @@ root@<CONTAINER>:/usr/src/app# tail -f ./text.log
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.3/1.3.png?raw=true)
 
 
+## 1.4
+
+```
+
+$ docker run -it --name ubuntu ubuntu sh -c 'apt-get update && apt-get install -y curl; echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+
+```
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.4/1.4.png?raw=true)
