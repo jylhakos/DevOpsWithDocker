@@ -1,0 +1,9 @@
+$ docker run -it devopsdockeruh/pull_exercise
+
+A link to the image on Docker Hub
+
+https://hub.docker.com/r/devopsdockeruh/pull_exercise
+
+A link to fetch repository from Github
+
+https://github.com/docker-hy/docs-exercise.git

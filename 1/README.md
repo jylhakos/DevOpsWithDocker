@@ -75,3 +75,33 @@ $ docker container ls -a | grep ubuntu
 
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.5/1.5.png?raw=true)
 
+## 1.6
+
+```
+
+$ docker run -it devopsdockeruh/pull_exercise
+
+```
+
+A link to the image on Docker Hub
+
+https://hub.docker.com/r/devopsdockeruh/pull_exercise
+
+```
+
+const victory = () => () => {
+  console.log('You found the correct password. Secret message is:\n"This is the secret message"')
+  return false
+}
+
+const KNOWN_INPUTS = {
+  "exit": close('exit'),
+  "close": close('close'),
+  "quit": close('quit'),
+  "": close('empty'),
+  "help": help(),
+  "basics": victory()
+}
+
+```
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.6/1.6.png?raw=true)
