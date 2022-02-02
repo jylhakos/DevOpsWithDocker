@@ -1,11 +1,7 @@
-FROM node:14.4
-
-ARG SECRET_MESSAGE
-
-ENV SECRET_MESSAGE=$SECRET_MESSAGE
+FROM node:alpine
 
 WORKDIR /usr/app
 
 COPY . .
 
-CMD ["node", "index"]
+CMD ["node", "index.js"]

@@ -1,56 +1,77 @@
-const fsPromises = require('fs').promises
+const readline = require('readline')
 
-const SECRET_MESSAGE = process.env.SECRET_MESSAGE
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+})
 
-const filePath = `${__dirname}/logs.txt`
+const close = (version) => () => {
 
-let rounds = 0
-
-let filehandle
-
-const printTimeToFile = async () => {
-
-  const startTime = new Date().getTime()
-
-  if (filehandle === undefined) {
-    try {
-      filehandle = await fsPromises.open(filePath, 'w')
-    } catch (err) {
-      console.error('Failed to open file', filePath, err)
-      return
-    }
+  const message = {
+    "close": "Closing now",
+    "exit": "Exiting now",
+    "quit": "Quitting now",
+    "empty": "Empty string was given, quitting now. Input help for more info"
   }
 
-  rounds++
+  console.log(message[version])
 
-  const GMTString = new Date().toGMTString()
+  return false
+}
 
-  const writeString = (rounds % 5 === 0) ? `Secret message is:\n"${SECRET_MESSAGE}"` : GMTString
+const help = () => () => {
+
+  console.log('Input exit to exit, quit to quit or close to close. You can also give empty string to quit')
   
-  try {
+  return true
+}
 
-    await filehandle.appendFile(`${writeString}\n`)
+const victory = () => () => {
 
-    console.log(`Wrote to file ${filePath}`)
+  console.log('You found the correct password. Secret message is:\n"This is the secret message"')
+  
+  return false
+}
 
-  } catch (err) {
+const KNOWN_INPUTS = {
+  "exit": close('exit'),
+  "close": close('close'),
+  "quit": close('quit'),
+  "": close('empty'),
+  "help": help(),
+  "basics": victory()
+}
 
-    console.error('Failed to write to file', err)
+const handlePassword = (password) => {
+
+  const keepGoing = KNOWN_INPUTS[password.toLowerCase()]
+
+  if (keepGoing === undefined) {
+
+    console.log(`${password} is not the correct password, please try again`)
+
+    return true
   }
 
-  const timeNow = new Date().getTime()
-
-  setTimeout(printTimeToFile, 3000 - (timeNow - startTime))
+  return keepGoing()
 }
 
-printTimeToFile()
+const askPassword = () => new Promise(resolve => rl.question('Give me the password: ', (p) => resolve(p)))
 
-const gracefulClose = async () => {
+const passwordLoop = async () => {
 
-  if (filehandle !== undefined) console.log('Closing file') && await filehandle.close()
-  process.exit(0)
+  let keepAsking = true
+
+  while (keepAsking) {
+
+    const password = await askPassword()
+
+    keepAsking = handlePassword(password)
+
+    console.log('')
+  }
+
+  rl.close()
 }
 
-process.on('SIGTERM', gracefulClose)
-
-process.on('SIGINT', gracefulClose)
+passwordLoop()
