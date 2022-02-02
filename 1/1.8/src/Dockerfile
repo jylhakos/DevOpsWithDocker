@@ -4,8 +4,12 @@ RUN apt-get update && apt-get install -y curl
 
 WORKDIR /usr/src/app
 
-COPY script.sh .
+#COPY script.sh .
 
-RUN chmod +x script.sh
+COPY script.txt .
 
-CMD ./script.sh
+#RUN chmod +x script.sh
+
+#CMD ./script.sh
+
+ENTRYPOINT ["./script.txt"]
