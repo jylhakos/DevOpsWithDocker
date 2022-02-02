@@ -65,5 +65,13 @@ $ docker run -it --name ubuntu ubuntu sh -c 'apt-get update && apt-get install -
 
 ## 1.5
 
+```
+
+$ docker pull devopsdockeruh/simple-web-service:ubuntu
+
+$ docker container ls -a | grep ubuntu
+
+```
+
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.5/1.5.png?raw=true)
 
