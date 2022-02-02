@@ -1,0 +1,9 @@
+FROM node:14.4
+
+ARG SECRET_MESSAGE
+ENV SECRET_MESSAGE=$SECRET_MESSAGE
+
+WORKDIR /usr/app
+COPY . .
+
+CMD ["node", "index"]

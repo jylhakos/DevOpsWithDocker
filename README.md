@@ -1,5 +1,50 @@
 # DevOps with Docker
 
+## Install Docker Engine
+
+You need to set up Docker’s GPG key to use a repository on a host machine.
+
+```
+
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+```
+
+Update the apt package index with apt-get update command, and install Docker Engine and containerd with the following command.
+
+```
+
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+```
+Verify that Docker Engine is installed correctly by running the hello-world image.
+
+A link to Docker Engine
+
+https://docs.docker.com/engine/install/ubuntu/
+
+## Install Docker Compose
+
+Download the stable release of Docker Compose form Github.
+
+```
+
+$ TAG=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep 'tag_name' | cut -d\" -f4)
+
+$ sudo curl -L "https://github.com/docker/compose/releases/download/${TAG}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+```
+Add executable permissions to the Docker Compose binary file.
+
+```
+
+$ sudo chmod +x /usr/local/bin/docker-compose
+
+```
+A link to Docker Compose
+
+https://docs.docker.com/compose/install/
+
 ## Docker
 
 Docker is a set of platform as a service (PaaS) products that use operating system level virtualization to deliver software in packages called containers.
@@ -12,11 +57,11 @@ Containers are packages of software and containers are created from images.
 
 A container includes the application and its dependencies and the container is isolated so that it doesn't interfere with other containers or the software running outside of the containers.
 
-You can run an Ubuntu container with the following command.
+You can run a container with the following command, where the -i (interactive) flag instructs to pass the stdin to the container and to start Bash shell in the container.
 
 ```
 
-$ docker run -it ubuntu bash
+$ docker run -it <IMAGE> bash
 
 ```
 
