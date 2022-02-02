@@ -83,7 +83,9 @@ We can search for images in the Docker Hub with docker search <IMAGE> command.
 
 ## Dockerfile
 
-Dockerfile uses syntax like the following script for building an image.
+Dockerfile is a file that contains the build instructions for an image and Dockerfile declares all of the required dependencies.
+
+Dockerfile uses syntax like the following script for building the image.
 
 ```
 
@@ -94,6 +96,8 @@ RUN npm install <PACKAGES>
 CMD <COMMAND>
 
 ```
+CMD in Dockerfile is executed when we call docker run command.
+
 ## Container
 
 Containers contain required software to run an application on isolated environments in the host machine with the ability to interact with each other and the host machine itself by defined methods.

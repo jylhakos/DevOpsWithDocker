@@ -105,3 +105,14 @@ const KNOWN_INPUTS = {
 
 ```
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.6/1.6.png?raw=true)
+
+## 1.7
+
+```
+
+$ docker build . -t web-server
+
+$ docker run web-server
+
+```
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.7/1.7.png?raw=true)
