@@ -85,6 +85,8 @@ We can search for images in the Docker Hub with docker search <IMAGE> command.
 
 Dockerfile is a file that contains the build instructions for an image and Dockerfile declares all of the required dependencies.
 
+Each Docker command in a Dockerfile adds a layer to the image.
+
 Dockerfile uses syntax like the following script for building the image.
 
 ```
@@ -118,6 +120,47 @@ List all your containers with the folloing command.
 $ docker container ls
 
 ```
+
+## Containerized applications
+
+The containers are running instances of container images and container images give each of its instances shared access to the host operating system through a container runtime.
+
+Follow the link below to see an example how to get a Node.js application into a Docker container.
+
+https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
+
+
+```
+
+FROM node:16
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# A wildcard is used to copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies for development
+RUN npm install
+
+# Install and build for production
+# RUN npm ci --only=production
+
+# Bundle source code for app
+COPY . .
+
+# Define port for Node.js
+EXPOSE 8080
+
+# Start Node.js with the JavaScript file
+CMD [ "node", "server.js" ]
+
+```
+
+A link to Node.js in a container
+
+https://code.visualstudio.com/docs/containers/quickstart-node
+
 ### Github
 
 ```
@@ -138,6 +181,12 @@ $ git push -u origin main
 
 ```
 
-## Containerized applications
+## Download Page
+
+youtube-dl is a program to download videos from YouTube.com website.
+
+A link to download youtube-dl code from Github repository.
+
+https://github.com/ytdl-org/youtube-dl
 
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.1/1.1.png?raw=true)
