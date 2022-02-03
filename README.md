@@ -9,7 +9,6 @@ You need to set up Docker’s GPG key to use a repository on a host machine.
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 ```
-
 Update the apt package index with apt-get update command, and install Docker Engine and containerd with the following command.
 
 ```
@@ -132,7 +131,13 @@ $ docker run -v <HOST_PATH_FILE_OR_DIRECTORY>:<CONTAINER_PATH_FILE_OR_DIRECTORY>
 ```
 While bind mounts are dependent on the directory structure and operating system of the host machine, volumes are completely managed by Docker.
 
+By default, when you run a container using docker run command, it does not publish any of its ports to the outside world.
+
 You can map your host machine port to a container port.
+
+To make a port available to services outside of Docker, or to Docker containers which are not connected to the container’s network, use the --publish or -p flag.
+
+The short syntax, -p <HOST_PORT>:<CONTAINER_PORT>, will result in the same as -p 0.0.0.0:<HOST_PORT>:<CONTAINER_PORT>, which is opening the port to the everyone, therefore avoid this is by defining the host-side port like this -p 127.0.0.1:<HOST_PORT>:<CONTAINER_PORT> by localhost 127.0.0.1.
 
 ## Containerized applications
 

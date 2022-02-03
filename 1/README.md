@@ -143,5 +143,15 @@ If you use --mount to bind-mount a file or directory that does not yet exist on 
 $ docker run --mount type=bind,source=<PATH>,destination=<PATH> <IMAGE>
 
 ```
-
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.9.png?raw=true)
+
+## 1.10
+
+Use the --publish or -p flag to make a port available to services outside of Docker.
+
+```
+
+$ docker run -p <HOST_PORT>:<CONTAINER_PORT> <IMAGE>
+
+```
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.10.png?raw=true)
