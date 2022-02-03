@@ -1,0 +1,4 @@
+
+$ docker build . -t java-spring-project 
+
+$ docker run -p 8000:8080 java-spring-project
