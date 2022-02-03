@@ -137,7 +137,7 @@ You can map your host machine port to a container port.
 
 To make a port available to services outside of Docker, or to Docker containers which are not connected to the container’s network, use the --publish or -p flag.
 
-The short syntax, -p <HOST_PORT>:<CONTAINER_PORT>, will result in the same as -p 0.0.0.0:<HOST_PORT>:<CONTAINER_PORT>, which is opening the port to the everyone, therefore avoid this is by defining the host-side port like this -p 127.0.0.1:<HOST_PORT>:<CONTAINER_PORT> by localhost 127.0.0.1.
+The short syntax, -p <HOST_PORT>:<CONTAINER_PORT>, will result in the same as -p 0.0.0.0:<HOST_PORT>:<CONTAINER_PORT>, which is opening the port to the everyone, therefore avoid this access by defining the host-side port with localhost syntax -p 127.0.0.1:<HOST_PORT>:<CONTAINER_PORT>.
 
 ## Containerized applications
 
@@ -146,7 +146,6 @@ The containers are running instances of container images and container images gi
 Follow the link below to see an example how to get a Node.js application into a Docker container.
 
 https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
-
 
 ```
 
