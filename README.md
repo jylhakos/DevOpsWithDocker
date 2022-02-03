@@ -121,6 +121,19 @@ $ docker container ls
 
 ```
 
+## volumes and ports
+
+A volume is a folder or a file that is shared between the host machine and the container.
+
+```
+
+$ docker run -v <HOST_PATH_FILE_OR_DIRECTORY>:<CONTAINER_PATH_FILE_OR_DIRECTORY> <IMAGE>
+
+```
+While bind mounts are dependent on the directory structure and operating system of the host machine, volumes are completely managed by Docker.
+
+You can map your host machine port to a container port.
+
 ## Containerized applications
 
 The containers are running instances of container images and container images give each of its instances shared access to the host operating system through a container runtime.

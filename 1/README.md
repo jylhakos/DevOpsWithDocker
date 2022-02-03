@@ -127,3 +127,21 @@ $ docker run -it curler
 
 ```
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.8/1.8.png?raw=true)
+
+## 1.9
+
+When you use a bind mount, a file or directory on the host machine is mounted into a container.
+
+The source of the mount is the path to the file or directory on the host.
+
+The destination takes as its value the path where the file or directory is mounted in the container.
+
+If you use --mount to bind-mount a file or directory that does not yet exist on the Docker host, Docker does not automatically create it for you.
+
+```
+
+$ docker run --mount type=bind,source=<PATH>,destination=<PATH> <IMAGE>
+
+```
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.9.png?raw=true)
