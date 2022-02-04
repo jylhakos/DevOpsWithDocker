@@ -201,7 +201,7 @@ $ docker run -p 8000:8080 -d example-backend
 $ curl  http://localhost:8000/ping
 
 ```
-A link to containerized Go application.
+A link to containerized Golang application.
 
 https://docs.docker.com/language/golang/
 
