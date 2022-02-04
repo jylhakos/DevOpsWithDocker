@@ -4,9 +4,13 @@ ENV PORT=8080
 
 ENV REQUEST_ORIGIN=https://example.com
 
+RUN mkdir /app
+
 WORKDIR /app
 
-RUN apk add build-base
+RUN apk add --update --no-cache gcc libc-dev
+
+#RUN apk add build-base
 
 COPY go.* ./
 

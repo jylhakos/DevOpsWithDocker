@@ -192,10 +192,13 @@ https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
 ## 1.13
 
 ```
+$ sudo kill -9 $(sudo lsof -t -i:8000)
 
 $ docker build . -t example-backend
 
-$ docker run -p 8080:8080 -d example-backend
+$ docker run -p 8000:8080 -d example-backend
+
+$ curl  http://localhost:8000/ping
 
 ```
 A link to containerized Go application.
