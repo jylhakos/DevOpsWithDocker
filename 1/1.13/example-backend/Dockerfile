@@ -6,7 +6,7 @@ ENV REQUEST_ORIGIN=https://example.com
 
 WORKDIR /app
 
-RUN apt install golang
+RUN apk add build-base
 
 COPY go.* ./
 
