@@ -3,4 +3,4 @@ $ docker build . -t example-backend
 
 $ docker run -p 8000:8080 -d example-backend
 
-$ curl  http://localhost:8000/api/ping
+$ curl http://localhost:8000/ping

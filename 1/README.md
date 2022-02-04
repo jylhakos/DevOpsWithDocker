@@ -207,3 +207,13 @@ https://docs.docker.com/language/golang/
 
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.13.png?raw=true)
 
+## 1.14
+
+```
+
+$ curl http://localhost:8000/ping
+
+```
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.14.png?raw=true)
+
