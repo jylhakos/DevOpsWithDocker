@@ -1,0 +1,9 @@
+
+$ docker build . -t example-backend
+
+$ docker run -p 8080:8080 -d example-backend
+
+A link to containerized Go application.
+
+https://docs.docker.com/language/golang/
+
