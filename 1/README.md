@@ -174,3 +174,17 @@ A link to Java Spring Project.
 
 https://github.com/docker-hy/material-applications/tree/main/spring-example-project
 
+## 1.12
+
+```
+
+$ docker build . -t example-frontend
+
+$ docker run -p 5000:5000 -d example-frontend
+
+```
+A link to Dockerfile for Node.js
+
+https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.12.png?raw=true)
