@@ -160,13 +160,17 @@ $ docker run -p <HOST_PORT>:<CONTAINER_PORT> <IMAGE>
 
 Utilizing tools from the Docker Hub for Java Spring project.
 
-The EXPOSE instruction in Dockerfile does not publish the port.
+The EXPOSE instruction in Dockerfile does not publish the port and you need to map your host machine port 8000 to a container port 8080.
 
 ```
 
 $ docker run -p 8000:8080 java-spring-project
 
 ```
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.11.png?raw=true)
+
 A link to Java Spring Project.
 
 https://github.com/docker-hy/material-applications/tree/main/spring-example-project
+

@@ -137,7 +137,7 @@ You can map your host machine port to a container port.
 
 To make a port available to services outside of Docker, or to Docker containers which are not connected to the container’s network, use the --publish or -p flag.
 
-The short syntax, -p <HOST_PORT>:<CONTAINER_PORT>, will result in the same as -p 0.0.0.0:<HOST_PORT>:<CONTAINER_PORT>, which is opening the port to the everyone, therefore avoid this access by defining the host-side port with localhost syntax -p 127.0.0.1:<HOST_PORT>:<CONTAINER_PORT>.
+The short syntax, -p <HOST_PORT>:<CONTAINER_PORT>, will result in the same as -p 0.0.0.0:<HOST_PORT>:<CONTAINER_PORT>, which is opening the port to everyone, therefore avoid to let everyone to access to the port by defining the host port using localhost address syntax -p 127.0.0.1:<HOST_PORT>:<CONTAINER_PORT>.
 
 ## Containerized applications
 
