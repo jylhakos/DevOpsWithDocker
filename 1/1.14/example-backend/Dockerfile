@@ -1,9 +1,5 @@
 FROM golang:1.16-alpine
 
-ENV PORT=8080
-
-ENV REQUEST_ORIGIN=https://example.com
-
 RUN mkdir /app
 
 WORKDIR /app
@@ -17,6 +13,10 @@ COPY go.* ./
 RUN go get -v -d ./...
 
 COPY . .
+
+ENV PORT=8080
+
+ENV REQUEST_ORIGIN=http://localhost:5000
 
 RUN go build -v -o ./server
 

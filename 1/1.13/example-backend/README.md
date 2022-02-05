@@ -1,20 +1,18 @@
-# backend-example-docker
+# backend-example
 
-This project is created to help learn docker configurations for backend projects. Student has to figure out how to construct their configuration based on the README. However, there are some additional helpers added in the README and in the exercise description.
-
-# Prerequisites for development
+## Prerequisites for development
 
 Install [golang](https://golang.org/doc/install) 1.16
 
-# Build project #
+## Build project #
 
 Run `go build`. It will generate a binary named "server"
 
-# Test project #
+## Test project #
 
 Run tests with `go test ./...`.
 
-# Execute project #
+## Environment
 
 Execute the file e.g. `./server`.
 

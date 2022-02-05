@@ -11,7 +11,6 @@ $ docker container stop <CONTAINER>
 $ docker ps -a | grep nginx
 
 ```
-
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.1/1.1.png?raw=true)
 
 # 1.2
