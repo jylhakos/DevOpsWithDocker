@@ -2,20 +2,28 @@ package router
 
 import (
 	"fmt"
+
 	"net/http"
+
 	"os"
+
 	"server/cache"
+
 	"server/common"
+
 	"server/controller"
+
 	"server/pgconnection"
 
 	"github.com/gin-contrib/cors"
+
 	"github.com/gin-gonic/gin"
 )
 
 func pingpong(context *gin.Context) {
 
 	redis := context.Query("redis") == "true"
+
 	postgres := context.Query("postgres") == "true"
 
 	if redis {
@@ -45,10 +53,13 @@ func Router() *gin.Engine {
 	allowedOrigin := common.FallbackString(os.Getenv("REQUEST_ORIGIN"), "https://example.com")
 
 	cacheErr := cache.InitializeRedisClient()
+
 	if cacheErr != nil {
 		fmt.Println(cacheErr)
 	}
+
 	pgErr := pgconnection.InitializePostgresClient()
+
 	if pgErr != nil {
 		fmt.Println(pgErr)
 	}
@@ -64,6 +75,7 @@ func Router() *gin.Engine {
 	router.GET("/ping", pingpong)
 
 	router.GET("/messages", controller.GetMessages)
+	
 	router.POST("/messages", controller.CreateMessage)
 
 	router.NoRoute(func(context *gin.Context) {

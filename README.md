@@ -16,7 +16,20 @@ Update the apt package index with apt-get update command, and install Docker Eng
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 ```
-Verify that Docker Engine is installed correctly by running the hello-world image.
+Verify that Docker Engine is installed correctly by running an example image.
+
+```
+
+$ docker run hello-world
+
+```
+Display information regarding the Docker installation.
+
+```
+
+$ docker info | grep -i cgroup
+
+```
 
 A link to Docker Engine
 
@@ -119,7 +132,19 @@ List all your containers with the folloing command.
 $ docker container ls
 
 ```
+### Remove Docker containers, images and network
 
+```
+
+$ docker stop $(docker ps -a -q)
+
+$ docker rm $(docker ps -a -q)
+
+$ docker rmi $(docker images -q)
+
+$ docker network prune
+
+```
 ## volumes and ports
 
 A volume is a folder or a file that is shared between the host machine and the container.
