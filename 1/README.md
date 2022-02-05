@@ -233,3 +233,11 @@ A link to the image in the repository.
 https://hub.docker.com/repository/docker/jylhakos/server-1.15
 
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.15.png?raw=true)
+
+## 1.16
+
+An example app released with Docker image on Heroku.
+
+https://app-2022-02-05.herokuapp.com/
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.16.png?raw=true)

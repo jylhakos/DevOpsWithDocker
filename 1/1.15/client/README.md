@@ -18,5 +18,7 @@ $ docker login
 
 $ docker push <USER_NAME>/client-1.15
 
+$ docker pull docker.io/jylhakos/client-1.15
+
 ```
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.15/client/1.15.png?raw=true)
