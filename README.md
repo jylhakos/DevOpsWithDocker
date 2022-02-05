@@ -231,4 +231,4 @@ A link to download youtube-dl code from Github repository.
 
 https://github.com/ytdl-org/youtube-dl
 
-![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.1/1.1.png?raw=true)
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.16.png?raw=true)
