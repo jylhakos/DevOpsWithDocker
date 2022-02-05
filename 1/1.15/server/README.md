@@ -18,5 +18,7 @@ $ curl -v http://localhost:8000/notes \
     --header "Content-Type: application/json" \
     --request "GET"
 
+$ curl -X "POST" http://localhost:8000/login -H "Content-Type: application/json" -d "{\"username\":\"anonymous\", \"password\":\"12345\"}"
+
 ```
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.15/server/1.15.png?raw=true)
