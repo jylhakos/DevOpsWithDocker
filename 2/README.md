@@ -35,3 +35,13 @@ $ curl  http://localhost:8000/ping
 ```
 
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.3.png?raw=true)
+
+# 2.4
+
+```
+
+$ curl  http://localhost:8000/ping?redis=true
+
+```
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.4.png?raw=true)

@@ -1,10 +1,23 @@
 version: '3.8'
 
 services:
-
-    simple-web-service-ubuntu:
-      image: devopsdockeruh/simple-web-service
-      build: .
-      volumes:
-        - .:/usr/src/app
-      container_name: simple-web-service
+  redis:
+    image: redis
+    container_name: redis
+    restart: unless-stopped
+  example-backend:
+    image: example-backend
+    container_name: example-backend
+    build: example-backend/.
+    ports:
+      - 8000:8080
+    environment:
+      REDIS_HOST: redis
+    depends_on:
+      - redis
+  example-frontend:
+    image: example-frontend
+    container_name: example-frontend
+    build: example-frontend/.
+    ports:
+      - 5000:5000
