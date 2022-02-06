@@ -1,7 +1,8 @@
 # docker-compose
 
 ```
-$ cd src && touch logs.txt
+
+$ touch text.log
 
 $ docker-compose build
 

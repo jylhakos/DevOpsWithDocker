@@ -1,4 +1,4 @@
-$ cd src && touch logs.txt
+$ touch text.log
 
 $ docker-compose build
 
@@ -6,6 +6,6 @@ $ docker-compose up
 
 $ docker-compose run <CONTAINER> <ARGUMENTS>
 
-$ docker-compose run simple-web-service --env SECRET_MESSAGE="hello world"
+$ docker-compose run web-service
 
 $ docker exec -it <CONTAINER> bash

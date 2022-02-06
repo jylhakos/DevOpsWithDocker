@@ -1,10 +1,9 @@
 version: '3.8'
 
 services:
-
-    simple-web-service-ubuntu:
-      image: devopsdockeruh/simple-web-service
-      build: .
-      volumes:
-        - .:/usr/src/app
-      container_name: simple-web-service
+  web:
+    image: devopsdockeruh/simple-web-service
+    container_name: web
+    ports:
+      - 8000:8080
+    command: ["server"]
