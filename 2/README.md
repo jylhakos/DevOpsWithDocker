@@ -2,7 +2,7 @@
 
 ```
 
-$ cd src && touch logs.txt
+$ touch logs.txt
 
 $ docker-compose build
 
