@@ -43,5 +43,14 @@ $ curl  http://localhost:8000/ping
 $ curl  http://localhost:8000/ping?redis=true
 
 ```
-
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.4.png?raw=true)
+
+# 2.5
+
+```
+
+$ docker-compose up -d --scale compute=2
+
+```
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.5.png?raw=true)
+
