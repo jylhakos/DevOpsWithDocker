@@ -1,0 +1,11 @@
+$ cd src && touch logs.txt
+
+$ docker-compose build
+
+$ docker-compose up
+
+$ docker-compose run <CONTAINER> <ARGUMENTS>
+
+$ docker-compose run simple-web-service --env SECRET_MESSAGE="hello world"
+
+$ docker exec -it <CONTAINER> bash

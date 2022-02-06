@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  simple-web-service:
+    image: devopsdockeruh/simple-web-service
+    container_name: simple-web-service
+    build: ./src
+    volumes:
+      - ./src:/usr/src/app
+    environment:
+      SECRET_MESSAGE: "hello world"

@@ -1,5 +1,5 @@
 $ mkdir /tmp/mnt/ && touch text.log
 
-$ docker run --mount type=bind,source=/tmp/mnt/text.log,destination=/usr/src/app/text.log devopsdockeruh/simple-web-service
+$ docker run --mount type=bind,source=/tmp/mnt/logs.txt,destination=/usr/src/app/logs.txt devopsdockeruh/simple-web-service
 
-$ docker run -v /tmp/mnt/text.log:/usr/src/app/text.log devopsdockeruh/simple-web-service
+$ docker run -v /tmp/mnt/logs:/usr/src/app/logs.txt devopsdockeruh/simple-web-service

@@ -35,28 +35,6 @@ A link to Docker Engine
 
 https://docs.docker.com/engine/install/ubuntu/
 
-## Install Docker Compose
-
-Download the stable release of Docker Compose form Github.
-
-```
-
-$ TAG=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep 'tag_name' | cut -d\" -f4)
-
-$ sudo curl -L "https://github.com/docker/compose/releases/download/${TAG}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-```
-Add executable permissions to the Docker Compose binary file.
-
-```
-
-$ sudo chmod +x /usr/local/bin/docker-compose
-
-```
-A link to Docker Compose
-
-https://docs.docker.com/compose/install/
-
 ## Docker
 
 Docker is a set of platform as a service (PaaS) products that use operating system level virtualization to deliver software in packages called containers.
@@ -203,6 +181,82 @@ A link to Node.js in a container
 
 https://code.visualstudio.com/docs/containers/quickstart-node
 
+## docker-compose
+
+The docker-compose is software for defining and running multiple container Docker applications.
+
+With docker-compose, you define a YAML file to configure your application’s services.
+
+Then, with a Docker command, you create and start all the services from your configuration file.
+
+Steps to configure app’s services with docker-compose
+
+1. Define your app’s environment with a Dockerfile
+
+2. Define the services that make up your app in docker-compose.yml
+
+3. Run docker compose up command and the Docker starts and runs your app.
+
+Services are built once and then tagged.
+
+```
+
+$ docker-compose build
+
+```
+Push image for services to the registry or repository.
+
+```
+
+$ docker-compose push
+
+```
+Start up your app by running the following command.
+
+```
+
+$ docker-compose up
+
+```
+You can give the container a name in the configuration and use the name to run the container.
+
+```
+
+$ docker-compose run <CONTAINER> <ARGUMENTS>
+
+```
+
+A link to docker-compose documentation.
+
+https://docs.docker.com/compose/
+
+### Install docker-compose
+
+Download the stable release of docker-compose form Github.
+```
+
+$ TAG=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep 'tag_name' | cut -d\" -f4)
+
+$ sudo curl -L "https://github.com/docker/compose/releases/download/${TAG}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+```
+Add executable permissions to the docker-compose binary file.
+
+```
+
+$ sudo chmod +x /usr/local/bin/docker-compose
+
+```
+A link to docker-compose
+
+https://docs.docker.com/compose/install/
+
+### Volumes in docker-compose
+
+Volumes in docker-compose are defined with the following syntax.
+
+<LOCATION_IN_HOST>:<LOCATION_IN_CONTAINER>
+
 ### Github
 
 ```
@@ -230,5 +284,7 @@ youtube-dl is a program to download videos from YouTube.com website.
 A link to download youtube-dl code from Github repository.
 
 https://github.com/ytdl-org/youtube-dl
+
+### Documentation
 
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/1/1.16.png?raw=true)
