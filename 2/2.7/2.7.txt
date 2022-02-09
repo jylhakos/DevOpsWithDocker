@@ -1,0 +1,56 @@
+
+## 2.7
+
+A machine learning project for training, backend and frontend
+
+Training of a model downloads images to ./imgs folder 
+
+and creates CSVs for generated image URI:s to ./data folder. 
+
+The training creates a model to ./model folder.
+
+The backend using Flask is running in port 5000. 
+
+The backend shares volume /src/model with training module.
+
+The backend requires a model created by training at ./model folder.
+
+The frontend runs in port 3000 and connects to backend running at port 5000.
+
+### docker-compose.yml
+
+version: '3.8'
+
+services:
+
+  training:
+    image: training
+    container_name: training
+    build: training/.
+    volumes:
+      - model:/usr/src/model
+      - data:/usr/src/data
+      - imgs:/usr/src/imgs
+  backend:
+    image: backend
+    container_name: backend
+    build: backend/.
+    ports:
+      - 8000:8080
+    volumes:
+      - model:/usr/src/model
+    depends_on:
+      - training
+  frontend:
+    image: frontend
+    container_name: frontend
+    build: frontend/.
+    ports:
+      - 5000:5000
+    depends_on:
+      - backend
+volumes:
+  model:
+  data:
+  imgs:
+
