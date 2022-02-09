@@ -1,5 +1,9 @@
 ## 2.8
 
+$ docker-compose -f docker-compose.yml down --volumes
+
+$ docker-compose -f docker-compose.yml up --build
+
 services:
   nginx:
     image: nginx
@@ -7,10 +11,9 @@ services:
     build: ./nginx
     volumes:
       - static-content:/usr/src/app
-
   frontend:
     container_name: frontend
-    build: ./nginx
+    build: ./frontend
     volumes:
       - static-content:/usr/src/app/public
     environment:
