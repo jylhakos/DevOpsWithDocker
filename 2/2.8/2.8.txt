@@ -1,0 +1,48 @@
+## 2.8
+
+services:
+  nginx:
+    image: nginx
+    container_name: nginx
+    build: ./nginx
+    volumes:
+      - static-content:/usr/src/app
+
+  frontend:
+    container_name: frontend
+    build: ./nginx
+    volumes:
+      - static-content:/usr/src/app/public
+    environment:
+      - NODE_ENV=production
+    command: npm run package
+
+volumes:
+  static-content:
+  
+
+Nginx will function as a reverse proxy for us 
+
+Nginx, backend and frontend are connected in the same network. 
+
+ /etc/nginx/nginx.conf
+ 
+events { worker_connections 1024; }
+
+http {
+  server {
+    listen 80;
+
+    location / {
+      proxy_pass _frontend-connection-url_;
+    }
+
+    location /api/ {
+      proxy_set_header Host $host;
+      proxy_pass _backend-connection-url_;
+    }
+  }
+}
+
+
+ 
