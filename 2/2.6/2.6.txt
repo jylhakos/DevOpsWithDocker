@@ -1,0 +1,87 @@
+## 2.6
+
+### Postgres
+
+PostgreSQL is an object-relational database management system.
+
+$ sudo lsof -ti:5432
+
+$ sudo kill -9
+
+### Redmine
+
+Redmine is a project management web application. 
+
+### Adminer
+
+Adminer is database management tool written in PHP.
+
+A link to Redmine
+
+https://www.redmine.org/
+
+A link to Adminer
+
+https://www.adminer.org/
+
+### docker-compose.yml
+
+version: '3.8'
+
+services:
+  example-redis:
+    image: redis
+    container_name: example-redis
+    restart: unless-stopped
+  example-db:
+    image: postgres:13.2-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_HOST: example-db:5432
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DATABASE: postgres
+    container_name: example-db
+    #volumes:
+    #  - database:/var/lib/postgresql/data
+  example-backend:
+    image: example-backend
+    container_name: example-backend
+    build: example-backend/.
+    ports:
+      - 8000:8080
+    environment:
+      REDIS_HOST: example-redis
+    depends_on:
+      - example-redis
+  example-frontend:
+    image: example-frontend
+    container_name: example-frontend
+    build: example-frontend/.
+    ports:
+      - 5000:5000
+#volumes:
+#  database:
+
+The default volume for the PostgreSQL database files is /var/lib/postgresql/data folder.
+
+The depends_on declaration makes sure that the that example-db service is started first.
+
+The only variable required is POSTGRES_PASSWORD to use the PostgreSQL image.
+
+On the first invocation of docker-compose up the volume will be created.
+
+Check a volume
+
+$ docker volume ls
+
+$ docker volume prune
+
+$ docker volume rm
+
+$ docker container inspect db_redmine | grep -A 5 Mounts
+
+We can inspect the changes that happened in the image
+
+$ docker container diff $(docker-compose ps -q redmine)
+

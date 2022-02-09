@@ -54,3 +54,22 @@ $ docker-compose up -d --scale compute=2
 ```
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.5.png?raw=true)
 
+# 2.6
+
+### Postgres
+
+PostgreSQL is an object-relational database management system.
+
+```
+
+$ sudo systemctl stop postgresql
+
+$ sudo systemctl stop postgresql
+
+$ sudo lsof -ti:5432
+
+$ docker-compose up
+
+```
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.6.png?raw=true)
