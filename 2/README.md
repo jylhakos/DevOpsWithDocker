@@ -40,7 +40,7 @@ $ curl  http://localhost:8000/ping
 
 ```
 
-$ curl  http://localhost:8000/ping?redis=true
+$ curl http://localhost:8000/ping?redis=true
 
 ```
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.4.png?raw=true)
@@ -64,7 +64,7 @@ PostgreSQL is an object-relational database management system.
 
 $ sudo systemctl stop postgresql
 
-$ sudo systemctl stop postgresql
+$ sudo systemctl status postgresql
 
 $ sudo lsof -ti:5432
 

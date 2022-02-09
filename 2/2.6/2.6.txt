@@ -6,7 +6,7 @@ PostgreSQL is an object-relational database management system.
 
 $ sudo lsof -ti:5432
 
-$ sudo kill -9
+$ sudo kill -9 <PID>
 
 ### Redmine
 
