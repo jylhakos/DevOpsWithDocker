@@ -71,5 +71,10 @@ $ sudo lsof -ti:5432
 $ docker-compose up
 
 ```
-
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.6.png?raw=true)
+
+# 2.7
+
+### machine-learning
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.7.png?raw=true)

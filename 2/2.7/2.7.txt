@@ -23,34 +23,39 @@ version: '3.8'
 
 services:
 
-  training:
-    image: training
-    container_name: training
-    build: training/.
+  ml-training:
+    image: ml-training
+    container_name: ml-training
+    build: ml-training/.
     volumes:
-      - model:/usr/src/model
-      - data:/usr/src/data
-      - imgs:/usr/src/imgs
-  backend:
-    image: backend
-    container_name: backend
-    build: backend/.
+      - model:/src/model
+      - data:/src/data
+      - imgs:/src/imgs
+  ml-backend:
+    image: ml-backend
+    container_name: ml-backend
+    build: ml-backend/.
     ports:
       - 8000:8080
     volumes:
-      - model:/usr/src/model
+      - model:/src/model
     depends_on:
-      - training
-  frontend:
-    image: frontend
-    container_name: frontend
-    build: frontend/.
+      - ml-training
+  ml-frontend:
+    image: ml-frontend
+    container_name: ml-frontend
+    build: ml-frontend/.
     ports:
       - 5000:5000
     depends_on:
-      - backend
+      - ml-backend
 volumes:
   model:
   data:
   imgs:
 
+$ sudo systemctl daemon-reload
+
+$ docker info | grep -i cgroup
+
+$ sudo systemctl status docker

@@ -7,6 +7,7 @@ COPY . .
 RUN npm ci
 
 RUN npm run build
+
 RUN npm install -g serve
 
 EXPOSE 3000

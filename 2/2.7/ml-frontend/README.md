@@ -1,3 +1,5 @@
-# Frontend for kurkkumopo exercise
+# Frontend for machine-learning exercise
 
-Runs in port `3000` and connects to backend running at port `5000`
+The frontend runs in port `3000` and it connects to backend running at port `5000`
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.7/ml-frontend/bicycle.png?raw=true)

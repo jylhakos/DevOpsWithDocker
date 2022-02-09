@@ -1,9 +1,10 @@
-FROM python:3.6.7-slim
+FROM python:3.7-slim
 
 WORKDIR /src
 
 RUN apt-get update
-RUN apt-get install ffmpeg libsm6 libxext6  -y
+
+RUN apt-get install ffmpeg libsm6 libxext6 -y
 
 COPY ./requirements.txt ./requirements.txt
 

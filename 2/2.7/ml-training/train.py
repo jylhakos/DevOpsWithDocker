@@ -46,7 +46,7 @@ def train(X, y):
     model.compile(optimizer="adam", loss="binary_crossentropy", metrics=["accuracy"])
     model.fit(x=X_train, y=y_train, batch_size=32, epochs=10, verbose=1)
     points = model.evaluate(X_test, y_test)
-    model.save('./model/model' )
+    model.save('./model/model')
     return
 
 def url_to_img(url, save_as=''):

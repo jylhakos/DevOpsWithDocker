@@ -1,3 +1,3 @@
-# Backend for kurkkumopo exercise
+# Backend for machine-learning exercise
 
-Flask backend running in port `5000`. Requires a model created by `ml-kurkkumopo-training` at `./model`
+Flask backend is running in port `5000` which requires a model created by `ml-kurkkumopo-training` at `./model`

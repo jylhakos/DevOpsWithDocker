@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  ml-training:
+    image: ml-training
+    container_name: ml-training
+    build: ml-training/.
+    volumes:
+      - model:/src/model
+      - data:/src/data
+      - imgs:/src/imgs
+  ml-backend:
+    image: ml-backend
+    container_name: ml-backend
+    build: ml-backend/.
+    ports:
+      - 5000:5000
+    volumes:
+      - model:/src/model
+    depends_on:
+      - ml-training
+  ml-frontend:
+    image: ml-frontend
+    container_name: ml-frontend
+    build: ml-frontend/.
+    ports:
+      - 3000:3000
+    depends_on:
+      - ml-backend
+volumes:
+  model:
+  data:
+  imgs:
