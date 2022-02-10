@@ -11,13 +11,7 @@ RUN apt-get update \
     | apt-get install -y nodejs \ 
     && node --version && npm --version
 
-#RUN npm install -g npm@8.4.1
-
 COPY package*.json ./
-
-#RUN npm install
-
-#RUN npm ci --only=production
 
 RUN npm ci
 

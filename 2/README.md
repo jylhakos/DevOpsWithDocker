@@ -78,3 +78,13 @@ $ docker-compose up
 ### machine-learning
 
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.7.png?raw=true)
+
+# 2.8
+
+### NGINX
+
+A link to deploying NGINX on Docker
+
+https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-docker/
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.8.png?raw=true)
