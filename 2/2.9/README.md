@@ -33,3 +33,5 @@ The apk is package manager for Alpine Linux distributions.
 A link to Alpine
 
 https://alpinelinux.org/
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.9/2.9.png?raw=true)
