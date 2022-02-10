@@ -95,3 +95,14 @@ https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-docke
 
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.9.png?raw=true)
 
+# 2.10
+
+### Reverse Proxy
+
+This nginx.conf file configuration results in passing all requests processed in /api, /ping and /api/ping location to the proxied server at the specified backend address. 
+
+A link to configure NGINX as a reverse proxy for HTTP protocols.
+
+https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.10.png?raw=true)
