@@ -83,7 +83,7 @@ $ docker-compose up
 
 ### NGINX
 
-A link to deploying NGINX on Docker
+A link to deploy NGINX on Docker
 
 https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-docker/
 
@@ -98,8 +98,6 @@ https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-docke
 # 2.10
 
 ### Reverse Proxy
-
-This nginx.conf file configuration results in passing all requests processed in /api, /ping and /api/ping location to the proxied server at the specified backend address. 
 
 A link to configure NGINX as a reverse proxy for HTTP protocols.
 

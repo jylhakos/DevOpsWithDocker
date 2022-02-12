@@ -16,7 +16,8 @@ COPY . .
 
 ENV PORT=8080
 
-ENV REQUEST_ORIGIN=http://localhost:5000
+#ENV REQUEST_ORIGIN=http://localhost:5000
+ENV REQUEST_ORIGIN=http://localhost
 
 RUN go build -v -o ./server
 
