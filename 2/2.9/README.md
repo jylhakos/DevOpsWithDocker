@@ -34,4 +34,8 @@ A link to Alpine
 
 https://alpinelinux.org/
 
+## PostgreSQL
+
+Docker creates the volume for PostgreSQL used by Docker containers.
+
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.9/2.9.png?raw=true)
