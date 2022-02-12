@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  server-dev:
+    build:
+      context: ./server-dev
+      dockerfile: Dockerfile.dev
+    container_name: server-dev
+    user: "nonroot:nonroot"
+    ports:
+      - 8000:8080
+    environment:
+      REQUEST_ORIGIN: http://localhost:5000
+      SECRET: secret
+    volumes: 
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./:/app
+    command: "./server"
+  client-dev:
+    build:
+      context: ./client-dev
+      dockerfile: Dockerfile.dev
+    container_name: client-dev
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      CHOKIDAR_USEPOLLING: true
+      REACT_APP_BACKEND_URL: http://localhost:8000
+    stdin_open: true
+    tty: true
+volumes:
+  node_modules:

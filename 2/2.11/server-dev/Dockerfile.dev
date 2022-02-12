@@ -1,0 +1,37 @@
+FROM golang:1.17.2-alpine
+
+WORKDIR /app
+
+RUN apk update && apk upgrade && apk add --no-cache wget curl gcc libc-dev
+
+RUN addgroup -S nonroot
+
+RUN adduser -S -D -h /app nonroot nonroot
+
+COPY go.* ./
+
+RUN go get -v -d ./...
+
+COPY . .
+
+RUN chmod a+rx -R ./ && chown nonroot:nonroot -R ./ && chown nonroot:nonroot /app
+
+ENV PORT=8080
+
+ENV REQUEST_ORIGIN=http://localhost:5000
+
+ENV SECRET=secret
+
+ENV CHOKIDAR_USEPOLLING=true
+
+RUN go build -v -o ./server
+
+RUN chmod a+x ./server && chown nonroot:nonroot ./server
+
+USER nonroot:nonroot
+
+EXPOSE 8080
+
+RUN ls -l ./
+
+CMD ["./server"]

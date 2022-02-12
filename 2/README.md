@@ -104,3 +104,7 @@ A link to configure NGINX as a reverse proxy for HTTP protocols.
 https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/
 
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.10.png?raw=true)
+
+# 2.11
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.11.png?raw=true)
