@@ -3,7 +3,6 @@ FROM node:16
 WORKDIR /usr/src/app
 
 RUN apt-get update \ 
-    && apt-get install xsel \
     && apt-get install -y npm \ 
     && apt-get install -y curl \ 
     && curl https://deb.nodesource.com/setup_16.x \ 

@@ -33,7 +33,6 @@ $ docker-compose up
 $ curl  http://localhost:8000/ping
 
 ```
-
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.3.png?raw=true)
 
 # 2.4
@@ -107,4 +106,11 @@ https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/
 
 # 2.11
 
+```
+
+$ docker-compose build
+
+$ docker-compose up
+
+```
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.11.png?raw=true)

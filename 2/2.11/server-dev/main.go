@@ -53,7 +53,7 @@ type Login struct {
   Password  string `json:"password"`
 }
 
-var users = map[string]string{
+var users = map[string]string {
   "username": "password",
 }
 
@@ -92,6 +92,8 @@ func validateToken(c *gin.Context) (*jwt.Token, error) {
 
     if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 
+      fmt.Println("Error")
+      
       return nil, errors.New("Error")
     }
 
@@ -112,6 +114,8 @@ func login(c *gin.Context) {
 
   var json Login
 
+  fmt.Println("login")
+
   if err := c.ShouldBindJSON(&json); err != nil {
     c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
     return
@@ -126,7 +130,9 @@ func login(c *gin.Context) {
 
   if err != nil {
 
-     return
+    fmt.Println(err)
+
+    return
   }
 
   c.JSON(http.StatusOK, gin.H{"token": token})
@@ -135,6 +141,8 @@ func login(c *gin.Context) {
 }
 
 func getNotes(c *gin.Context) {
+
+    fmt.Println("getNotes")
 
     c.IndentedJSON(http.StatusOK, notes)
 }

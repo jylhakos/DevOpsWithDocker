@@ -1,20 +1,28 @@
-FROM golang:1.17.2-alpine
+FROM ubuntu:18.04
 
-WORKDIR /app
+#FROM golang:1.17.2-alpine
 
-RUN apk update && apk upgrade && apk add --no-cache wget curl gcc libc-dev
+RUN apt-get update && apt-get install -y wget gcc && rm -rf /usr/local/go && wget -c https://golang.org/dl/go1.17.2.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.17.2.linux-amd64.tar.gz
 
-RUN addgroup -S nonroot
-
-RUN adduser -S -D -h /app nonroot nonroot
-
-COPY go.* ./
-
-RUN go get -v -d ./...
+#RUN apk update && apk upgrade && apk add --no-cache gcc libc-dev
 
 COPY . .
 
-RUN chmod a+rx -R ./ && chown nonroot:nonroot -R ./ && chown nonroot:nonroot /app
+ENV PATH=$PATH:/usr/local/go/bin
+
+RUN go get -v -d ./
+
+#RUN go get -v -d ./...
+
+RUN useradd -m nonroot
+
+#RUN addgroup -S nonroot
+
+#RUN adduser -S -D -h /app nonroot nonroot
+
+#COPY . .
+
+#RUN chmod a+rx -R ./ && chown nonroot:nonroot -R ./ && chown nonroot:nonroot /app
 
 ENV PORT=8080
 
@@ -28,10 +36,12 @@ RUN go build -v -o ./server
 
 RUN chmod a+x ./server && chown nonroot:nonroot ./server
 
-USER nonroot:nonroot
+#USER nonroot:nonroot
 
 EXPOSE 8080
 
-RUN ls -l ./
+#ENV PATH=$PATH:/usr/local/bin/server
 
-CMD ["./server"]
+RUN echo $PATH && pwd && ls -l ./server && ls -l .
+
+CMD "/bin/sh -c ./server"

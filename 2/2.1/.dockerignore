@@ -1,8 +1,8 @@
-Dockerfile
 .dockerignore
 .gitignore
 server
 README.md
 docker-compose.yml
+Dockerfile
 2.1.txt
 2.1.png

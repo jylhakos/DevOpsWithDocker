@@ -6,7 +6,6 @@ services:
       context: ./server-dev
       dockerfile: Dockerfile.dev
     container_name: server-dev
-    user: "nonroot:nonroot"
     ports:
       - 8000:8080
     environment:
@@ -14,8 +13,9 @@ services:
       SECRET: secret
     volumes: 
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - ./:/app
-    command: "./server"
+      - .:/app
+    #user: "nonroot:nonroot"
+    command: "/bin/sh -c ./server"
   client-dev:
     build:
       context: ./client-dev
@@ -24,8 +24,8 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+      - ./src:/usr/src/app/src
+      - node_modules:/usr/src/app/node_modules
     environment:
       CHOKIDAR_USEPOLLING: true
       REACT_APP_BACKEND_URL: http://localhost:8000

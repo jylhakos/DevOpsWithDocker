@@ -12,6 +12,8 @@ const login = async credentials => {
 
   const response = await axios.post(url, credentials)
   
+  console.log('login.js response', response)
+  
   return response.data
 }
 

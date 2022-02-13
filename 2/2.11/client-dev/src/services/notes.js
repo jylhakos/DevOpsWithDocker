@@ -18,6 +18,8 @@ const getAll = () => {
   
   const request = axios.get(url, { crossdomain: true })
   
+  console.log('notes.js getAll', request)
+
   return request.then(response => response.data)
 }
 

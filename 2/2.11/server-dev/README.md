@@ -9,3 +9,5 @@ The docker build command creates Docker images from the Dockerfile.
 A link to build Golang image.
 
 https://docs.docker.com/language/golang/build-images/
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/2/2.11/server-dev/2.11.png?raw=true)

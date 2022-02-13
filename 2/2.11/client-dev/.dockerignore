@@ -1,5 +1,4 @@
-Dockerfile
 .dockerignore
 node_modules
 README.md
-1.12.txt
+Dockerfile.dev
