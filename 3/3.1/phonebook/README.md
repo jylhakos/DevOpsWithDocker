@@ -142,4 +142,4 @@ https://docs.github.com/en/actions
 
 A link to deployed app logs at Heroku.
 
-![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.1/phonebook/3.1.png?raw=true)
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.1/3.1.png?raw=true)
