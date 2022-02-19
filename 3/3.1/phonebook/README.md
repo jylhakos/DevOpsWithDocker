@@ -97,7 +97,7 @@ By making HTTP requests from your React.js frontend, you can connect to Express.
 
 JSON documents can be sent to the Express.js server, where they can be processed and stored in MongoDB.
 
-![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.1/phonebook.jpeg?raw=true)
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.1/phonebook/phonebook.jpeg?raw=true)
 
 React implements the presentation layer, Express and Node builds up the application layer, and MongoDB creates the database layer.
 
@@ -136,9 +136,10 @@ https://docs.docker.com/engine/tutorials/networkingcontainers/
 
 Execute your software development workflows in your GitHub repository with GitHub Actions. 
 
-A link to GitHub Actions
+A link to documents for GitHub Actions.
 
 https://docs.github.com/en/actions
 
+A link to deployed app logs at Heroku.
 
-![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.1/3.1.png?raw=true)
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.1/phonebook/3.1.png?raw=true)

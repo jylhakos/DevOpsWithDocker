@@ -2,8 +2,7 @@ name: Deployment to Heroku
 
 on:
   push:
-    branches:
-      - 'main'
+    branches: [ main ]
 defaults:
   run:
     working-directory: 3/3.1/phonebook/backend
@@ -13,11 +12,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Heroku Deploy
+      - name: Deployment
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_APPLICATION_NAME}}
-          heroku_email: ${{secrets.HEROKU_EMAIL_ADDRESS}}
-          appdir: "."
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          appdir: "3/3.1/phonebook/backend"
           usedocker: true
+          dontuseforce: false
