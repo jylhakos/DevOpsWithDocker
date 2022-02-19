@@ -20,10 +20,4 @@ jobs:
           heroku_email: ${{secrets.HEROKU_EMAIL_ADDRESS}}
           appdir: "."
           usedocker: true
-          justlogin: true
-      - name: "Login"
-        run: heroku container:login
-      - name: "Build and push"
-        run: heroku container:push web --app ${{secrets.HEROKU_APPLICATION_NAME}}
-      - name: "Release"
-        run: heroku container:release web --app ${{secrets.HEROKU_APPLICATION_NAME}}
+          justlogin: false
