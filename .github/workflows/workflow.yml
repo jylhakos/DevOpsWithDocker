@@ -16,7 +16,7 @@ jobs:
         run: |
           cat > ~/.netrc <<EOF
             machine api.heroku.com
-              login $HEROKU_EMAIL_ADDRESS
+              login $HEROKU_EMAIL
               password $HEROKU_API_KEY
             machine git.heroku.com
               login $HEROKU_EMAIL_ADDRESS
@@ -24,15 +24,12 @@ jobs:
           EOF
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          HEROKU_EMAIL_ADDRESS: ${{ secrets.HEROKU_EMAIL_ADDRESS }}
-      - name: Build, Push
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          HEROKU_APPLICATION_NAME: ${{ secrets.HEROKU_APPLICATION_NAME }}
-          HEROKU_EMAIL_ADDRESS: ${{ secrets.HEROKU_EMAIL_ADDRESS }}
-        run: heroku container:push web -a $HEROKU_APPLICATION_NAME
-      - name: Release
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          HEROKU_APPLICATION_NAME: ${{ secrets.HEROKU_APPLICATION_NAME }}
-        run: heroku container:release web -a $HEROKU_APPLICATION_NAME 
+          HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
+      - name: Deploy
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          appdir: "."
+          usedocker: true
