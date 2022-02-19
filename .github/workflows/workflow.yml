@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: "Login to Heroku"
+        run: heroku container:login
       - name: Build and Deploy
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
@@ -22,3 +24,9 @@ jobs:
           appdir: "."
           usedocker: true
           justlogin: true
+      - name: "Login to Heroku"
+        run: heroku container:login
+      - name: "Build and Push to Heroku"
+        run: heroku container:push web --app ${{secrets.HEROKU_APPLICATION_NAME}}
+      - name: "Release"
+        run: heroku container:release web --app ${{secrets.HEROKU_APPLICATION_NAME}}
