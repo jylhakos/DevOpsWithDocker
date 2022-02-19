@@ -21,3 +21,4 @@ jobs:
           appdir: "."
           usedocker: true
           justlogin: false
+          remote_branch: main
