@@ -25,15 +25,14 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
-      - name: Push
-        env: 
+      - name: Build, Push
+        env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_APPLICATION_NAME: ${{ secrets.HEROKU_APPLICATION_NAME }}
           HEROKU_EMAIL_ADDRESS: ${{ secrets.HEROKU_EMAIL_ADDRESS }}
-        run: heroku container:push web --app ${{ secrets.HEROKU_APPLICATION_NAME }}
+        run: heroku container:push -a $HEROKU_APPLICATION_NAME web 
       - name: Release
-        env: 
+        env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_APPLICATION_NAME: ${{ secrets.HEROKU_APPLICATION_NAME }}
-        run: heroku container:release web --app ${{ secrets.HEROKU_APPLICATION_NAME }}
-       
+        run: heroku container:release -a $HEROKU_APPLICATION_NAME web 
