@@ -12,17 +12,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Login to Heroku
+      - name: Login
+        run: |
+          cat > ~/.netrc <<EOF
+            machine api.heroku.com
+              login $HEROKU_EMAIL
+              password $HEROKU_API_KEY
+            machine git.heroku.com
+              login $HEROKU_EMAIL
+              password $HEROKU_API_KEY
+          EOF
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
+      - name: Push
         env: 
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:login 
-      - name: Build
-        uses: akhileshns/heroku-deploy@v3.12.12
-        with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: ${{ secrets.HEROKU_APPLICATION_NAME }}
-          heroku_email: ${{ secrets.HEROKU_EMAIL_ADDRESS }}
-          appdir: "."
-          usedocker: true
-          justlogin: false
-          remote_branch: main
+          HEROKU_APPLICATION_NAME: ${{ secrets.HEROKU_APPLICATION_NAME }}
+          HEROKU_EMAIL_ADDRESS: ${{ secrets.HEROKU_EMAIL_ADDRESS }}
+        run: heroku container:push web --app ${{ secrets.HEROKU_APPLICATION_NAME }}
+      - name: Release
+        env: 
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_APPLICATION_NAME: ${{ secrets.HEROKU_APPLICATION_NAME }}
+        run: heroku container:release web --app ${{ secrets.HEROKU_APPLICATION_NAME }}
+       
