@@ -1,0 +1,42 @@
+# $ docker-compose -f docker-compose.yml down --volumes
+# $ docker-compose -f docker-compose.yml up --build
+# $ docker exec -it <CONTAINER ID> bash
+# front-end: $ curl http://localhost:3001/
+# back-end: $ curl http://localhost:3001/api/persons
+
+version: '3.8'
+
+services:
+  backend:
+    image: phonebook
+    container_name: phonebook
+    build: backend/.
+    volumes:
+      - ./backend/:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 3001:3001
+    expose:
+      - "3001"
+    environment:
+      - MONGO_URL=mongodb+srv://fullstack:fullstack@cluster3-13.pmolw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+      - PORT=3001
+  #  depends_on:
+  #    - database
+  #database:
+  #  image: mongo
+  #  container_name: mongo
+  #  ports:
+  #    - 27017:27017
+  #  expose:
+  #    - "27017"
+  #  volumes:
+  #    - ./backend/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+  #    - ./backend/mongo_data:/data/db
+  #  environment:
+  #    MONGO_INITDB_ROOT_USERNAME: the_username
+  #    MONGO_INITDB_ROOT_PASSWORD: the_password
+  #    MONGO_INITDB_DATABASE: the_database
+  #    NODE_ENV: production
+#volumes:
+#  mongo_data:
