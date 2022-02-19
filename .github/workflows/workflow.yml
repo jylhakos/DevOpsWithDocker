@@ -21,3 +21,4 @@ jobs:
           heroku_email: ${{secrets.HEROKU_EMAIL_ADDRESS}}
           appdir: "."
           usedocker: true
+          justlogin: true
