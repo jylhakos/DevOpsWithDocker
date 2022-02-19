@@ -4,14 +4,20 @@ on:
   push:
     branches:
       - 'main'
+defaults:
+  run:
+    working-directory: 3/3.1/phonebook/backend
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Heroku Deploy
+        uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APPLICATION_NAME}}
           heroku_email: ${{secrets.HEROKU_EMAIL_ADDRESS}}
+          appdir: "."
           usedocker: true
