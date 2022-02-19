@@ -30,9 +30,9 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_APPLICATION_NAME: ${{ secrets.HEROKU_APPLICATION_NAME }}
           HEROKU_EMAIL_ADDRESS: ${{ secrets.HEROKU_EMAIL_ADDRESS }}
-        run: heroku container:push -a $HEROKU_APPLICATION_NAME web 
+        run: heroku container:push web --app $HEROKU_APPLICATION_NAME
       - name: Release
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_APPLICATION_NAME: ${{ secrets.HEROKU_APPLICATION_NAME }}
-        run: heroku container:release -a $HEROKU_APPLICATION_NAME web 
+        run: heroku container:release web --app $HEROKU_APPLICATION_NAME 
