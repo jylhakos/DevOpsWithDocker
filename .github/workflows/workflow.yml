@@ -2,8 +2,7 @@ name: Deployment to Heroku
 
 on:
   push:
-    branches:
-      - 'main'
+    branches: [ main ]
 defaults:
   run:
     working-directory: 3/3.1/phonebook/backend
@@ -13,8 +12,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: "Login to Heroku"
-        run: heroku container:login
       - name: Build and Deploy
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
@@ -23,10 +20,4 @@ jobs:
           heroku_email: ${{secrets.HEROKU_EMAIL_ADDRESS}}
           appdir: "."
           usedocker: true
-          justlogin: true
-      - name: "Login to Heroku"
-        run: heroku container:login
-      - name: "Build and Push to Heroku"
-        run: heroku container:push web --app ${{secrets.HEROKU_APPLICATION_NAME}}
-      - name: "Release"
-        run: heroku container:release web --app ${{secrets.HEROKU_APPLICATION_NAME}}
+          justlogin: false
