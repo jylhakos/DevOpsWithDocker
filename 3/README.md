@@ -21,3 +21,11 @@ $ docker run --privileged -v /var/run/docker.sock:/var/run/docker.sock script
 ```
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.2.png?raw=true)
 
+# 3.3
+
+By default, Docker runs commands inside the container as root.
+
+A link to best practises
+
+https://github.com/nodejs/docker-node/blob/main/docs/BestPractices.md
+
