@@ -1,7 +1,5 @@
 # $ docker build -t <CONTAINER> .
-# $ docker run <CONTAINER>
-# $ docker exec -ti <CONTAINER> bash
-# $ docker run -v /var/run/docker.sock:/var/run/docker.sock script
+# $ docker run --privileged -v /var/run/docker.sock:/var/run/docker.sock <CONTAINER>
 
 FROM ubuntu:18.04
 
