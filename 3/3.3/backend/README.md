@@ -22,3 +22,11 @@ Server accepts the following environment variables:
   - `POSTGRES_PASSWORD` database password. Default: postgres
   - `POSTGRES_DATABASE` database name. Default: postgres
 
+
+```
+
+$ curl --request GET --url http://localhost:8000/ping -v
+
+```
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.3/3.3.png?raw=true)
+
