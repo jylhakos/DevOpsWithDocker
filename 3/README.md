@@ -36,3 +36,13 @@ $ docker exec -ti backend /bin/sh
 ```
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.3.png?raw=true)
 
+# 3.4
+
+Optimizing the image size by reducing the number of layers in Dockerfiles.
+
+```
+
+$ docker image history <IMAGE>
+
+```
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.4.png?raw=true)

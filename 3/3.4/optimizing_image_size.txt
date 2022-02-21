@@ -1,0 +1,44 @@
+Optimizing the image size by reducing the number of layers
+
+$ docker images
+
+REPOSITORY      TAG             IMAGE ID       CREATED          SIZE
+
+frontend        latest          a753292d2bd4   2 minutes ago    1.48GB
+backend         latest          df2033c7b5ae   41 minutes ago   589MB
+
+frontend        latest          a04270b5a96a   6 seconds ago    359MB
+backend         latest          8806c64a5d75   7 minutes ago    571MB
+
+$ docker image history frontend
+
+IMAGE          CREATED          CREATED BY                                      SIZE
+
+a04270b5a96a   4 minutes ago    /bin/sh -c #(nop)  CMD ["serve" "-s" "-l" "5…   0B        
+8dba1f4e7d53   4 minutes ago    /bin/sh -c #(nop)  EXPOSE 5000                  0B        
+82540bc6e673   4 minutes ago    /bin/sh -c #(nop)  USER appuser                 0B        
+d6480c62677c   4 minutes ago    /bin/sh -c addgroup -S appgroup && adduser -…   4.87kB    
+1fda493b81b5   7 minutes ago    /bin/sh -c npm install -g serve                 6.69MB    
+fb8b9e90af33   8 minutes ago    /bin/sh -c #(nop) COPY dir:e7d3341d6257ddbbe…   731kB     
+09e1ed6ac8f2   8 minutes ago    /bin/sh -c npm ci && npm run build              238MB     
+9b01741dff70   11 minutes ago   /bin/sh -c #(nop) COPY dir:e7d3341d6257ddbbe…   731kB     
+982a2721be93   11 minutes ago   /bin/sh -c #(nop)  ENV REACT_APP_BACKEND_URL…   0B        
+0a5fa4fe3463   15 minutes ago   /bin/sh -c #(nop) WORKDIR /usr/src/app          0B    
+
+$ docker image history backend
+
+IMAGE          CREATED          CREATED BY                                      SIZE 
+
+8806c64a5d75   10 minutes ago   /bin/sh -c #(nop)  CMD ["./server"]             0B        
+3271ee8f4228   10 minutes ago   /bin/sh -c #(nop)  EXPOSE 8080                  0B        
+1b145fd07782   10 minutes ago   /bin/sh -c #(nop)  USER nonroot                 0B        
+30ce1d0d7166   10 minutes ago   /bin/sh -c go build -v -o ./server && chmod …   145MB     
+ff2616cdb165   11 minutes ago   /bin/sh -c addgroup -S nonroot && adduser -S…   33kB      
+6a897690e3a6   11 minutes ago   /bin/sh -c #(nop)  ENV REQUEST_ORIGIN=http:/…   0B        
+070eb2b3df0c   11 minutes ago   /bin/sh -c #(nop)  ENV PORT=8080                0B        
+14115cc623b3   11 minutes ago   /bin/sh -c #(nop) COPY dir:5cf8e5170a2fd6498…   28.3kB    
+0d1541cefe23   11 minutes ago   /bin/sh -c go get -v -d ./...                   22.9kB    
+ce455d8b0ecc   11 minutes ago   /bin/sh -c #(nop) COPY multi:2df5a7596faa8ed…   19.9kB    
+8aa20547f133   11 minutes ago   /bin/sh -c apk add --update --no-cache gcc l…   124MB     
+554e8e920550   12 minutes ago   /bin/sh -c #(nop) WORKDIR /app                  0B 
+
