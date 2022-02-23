@@ -1,0 +1,24 @@
+# $ docker-compose -f docker-compose.yml up --build
+# $ docker exec -it <CONTAINER ID> /bin/sh
+# front-end: $ curl http://localhost:3001/
+# back-end: $ curl http://localhost:3001/api/persons
+
+version: '3.8'
+
+services:
+  backend:
+    image: phonebook
+    container_name: phonebook
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile.after
+    volumes:
+      - ./backend/:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 3001:3001
+    expose:
+      - "3001"
+    environment:
+      - MONGO_URL=mongodb+srv://fullstack:fullstack@cluster3-13.pmolw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+      - PORT=3001
