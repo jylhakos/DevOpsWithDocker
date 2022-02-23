@@ -1,0 +1,24 @@
+$ docker images
+
+REPOSITORY      TAG             IMAGE ID       CREATED             SIZE
+frontend     	latest          cadb7a20d43c   2 minutes ago       620MB
+backend      	latest          1e7ec147a1b3   About a minute ago   18.1MB
+
+$ docker image history frontend
+
+IMAGE          CREATED              CREATED BY                                      SIZE
+a0ade51c6158   55 seconds ago       /bin/sh -c #(nop)  CMD ["serve" "-s" "-l" "5…   0B        
+e23cae9714b4   55 seconds ago       /bin/sh -c #(nop)  EXPOSE 5000                  0B        
+65b374aada2c   56 seconds ago       /bin/sh -c #(nop)  USER appuser                 0B        
+4000fdc0b6b7   56 seconds ago       /bin/sh -c addgroup -S appgroup && adduser -…   4.87kB    
+e6db974ce0e8   About a minute ago   /bin/sh -c #(nop) COPY dir:cfa5049045f68ba01…   248MB     
+
+$ docker image history backend
+
+IMAGE          CREATED          CREATED BY                                      SIZE
+1e7ec147a1b3   2 minutes ago    /bin/sh -c #(nop)  ENTRYPOINT ["./server"]      0B        
+5626ad91b05f   2 minutes ago    /bin/sh -c #(nop)  EXPOSE 8080                  0B        
+059a64437c50   13 minutes ago   /bin/sh -c #(nop) COPY dir:51e3d6ea4d44e2f9b…   18.1MB    
+9753236e7044   13 minutes ago   /bin/sh -c #(nop)  ENV REQUEST_ORIGIN=http:/…   0B        
+a782fd534ebf   13 minutes ago   /bin/sh -c #(nop) WORKDIR /app                  0B
+

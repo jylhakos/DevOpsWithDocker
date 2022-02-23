@@ -52,3 +52,8 @@ $ docker image history <IMAGE>
 Golang and the Debian based images replaced with an Alpine-based image in Dockerfiles.
 
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.5.png?raw=true)
+
+# 3.6
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.6.png?raw=true)
+
