@@ -10,6 +10,8 @@ RUN npm install
 
 COPY . ./
 
+RUN chmod a+rx -R /usr/src/app/build
+
 FROM node:16.3.0-alpine
 
 WORKDIR /usr/src/app
