@@ -1,5 +1,5 @@
 {
-  "name": "backend-phonebook",
+  "name": "phonebook",
   "version": "1.0.0",
   "description": "Dev Ops With Docker",
   "main": "index.js",

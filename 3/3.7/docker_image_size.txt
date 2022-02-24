@@ -1,0 +1,13 @@
+$ docker images
+
+REPOSITORY   TAG             IMAGE ID       CREATED          SIZE
+phonebook    latest          133f3c8cee27   7 minutes ago    140MB
+
+$ docker image history phonebook
+
+IMAGE          CREATED         CREATED BY                                      SIZE 
+133f3c8cee27   8 minutes ago   /bin/sh -c #(nop)  ENTRYPOINT ["npm" "start"…   0B        
+3283ebe8724d   8 minutes ago   /bin/sh -c #(nop)  USER appuser                 0B        
+5822404e0775   8 minutes ago   /bin/sh -c addgroup -S appgroup && adduser -…   13.8MB    
+a7794272864a   8 minutes ago   /bin/sh -c #(nop) COPY dir:0edab9c431d2bc334…   13MB      
+

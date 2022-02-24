@@ -26,10 +26,12 @@ WORKDIR /app
 
 ENV REQUEST_ORIGIN=http://localhost:5000
 
+EXPOSE 8080
+
 COPY --from=build /app .
 
-USER nonroot
+COPY --from=0 /etc/passwd /etc/passwd
 
-EXPOSE 8080
+USER nonroot
 
 ENTRYPOINT ["./server"]

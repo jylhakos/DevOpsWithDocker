@@ -1,16 +1,0 @@
-Script started on 2022-02-20 14:44:41+0800
-CONTAINER ID   IMAGE                      COMMAND                  CREATED        STATUS         PORTS     NAMES
-c3826dba8369   rancher/k3s:v1.21.5-k3s2   "/bin/k3s agent"         3 months ago   Up 9 minutes             k3d-k3s-default-agent-1
-2b310127ed3e   rancher/k3s:v1.21.5-k3s2   "/bin/k3s agent"         3 months ago   Up 9 minutes             k3d-k3s-default-agent-0
-810c1c67b65a   rancher/k3s:v1.21.5-k3s2   "/bin/k3s server --t…"   3 months ago   Up 9 minutes             k3d-k3s-default-server-0
-]0;laptop@computer: ~/UNIVERSITY/DEVOPSWITHDOCKER/DevOpsWithDocker/3/3.3[01;32mlaptop@computer[00m:[01;34m~/UNIVERSITY/DEVOPSWITHDOCKER/DevOpsWithDocker/3/3.3[00m$ CONTAINER IID   IMAGE                      COMMAND                  CREATED        STATUS          PORTS     NAMES
-CONTAINER: command not found
-]0;laptop@computer: ~/UNIVERSITY/DEVOPSWITHDOCKER/DevOpsWithDocker/3/3.3[01;32mlaptop@computer[00m:[01;34m~/UNIVERSITY/DEVOPSWITHDOCKER/DevOpsWithDocker/3/3.3[00m$ c3826dba83669   rancher/k3s:v1.21.5-k3s2   "/bin/k3s agent"         3 months ago   Up 9 minuutes             k3d-k3s-default-agent-1
-c3826dba8369: command not found
-]0;laptop@computer: ~/UNIVERSITY/DEVOPSWITHDOCKER/DevOpsWithDocker/3/3.3[01;32mlaptop@computer[00m:[01;34m~/UNIVERSITY/DEVOPSWITHDOCKER/DevOpsWithDocker/3/3.3[00m$ 2b310127ed33e   rancher/k3s:v1.21.5-k3s2   "/bin/k3s agent"         3 months ago   Up 9 minuutes             k3d-k3s-default-agent-0
-2b310127ed3e: command not found
-]0;laptop@computer: ~/UNIVERSITY/DEVOPSWITHDOCKER/DevOpsWithDocker/3/3.3[01;32mlaptop@computer[00m:[01;34m~/UNIVERSITY/DEVOPSWITHDOCKER/DevOpsWithDocker/3/3.3[00m$ 810c1c67b655a   rancher/k3s:v1.21.5-k3s2   "/bin/k3s server --t…"   3 months ago   Up 9 minuutes             k3d-k3s-default-server-0
-810c1c67b65a: command not found
-]0;laptop@computer: ~/UNIVERSITY/DEVOPSWITHDOCKER/DevOpsWithDocker/3/3.3[01;32mlaptop@computer[00m:[01;34m~/UNIVERSITY/DEVOPSWITHDOCKER/DevOpsWithDocker/3/3.3[00m$ exit
-
-Script done on 2022-02-20 14:44:42+0800

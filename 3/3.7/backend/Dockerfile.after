@@ -2,34 +2,22 @@ FROM node:16 as build
 
 WORKDIR /usr/src/app/
 
-RUN useradd -m appuser && chown appuser:appuser -R .
-
-RUN npm install -g npm@8.5.1
-
-RUN ls -l . 
-
-COPY . ./
+COPY package*.json ./
 
 ENV NODE_ENV=production
 
 RUN npm install
 
-COPY . /usr/src/app/
-
-RUN chown appuser:appuser -R /usr/src/app/
-
-RUN ls -l /usr/src/app/ 
+COPY . ./
 
 FROM node:16.3.0-alpine
 
 WORKDIR /usr/src/app
 
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup && chown appuser:appgroup -R /usr/src/app && ls -l /usr/src/app 
-
 COPY --from=build /usr/src/app .
 
-RUN ls -l .
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup -h /bin/sh -D appuser && chown appuser:appgroup -R /usr/src/app && chmod a+rx -R /usr/src/app
 
 USER appuser
 
-CMD ["npm", "start", "--port", "3001"]
+ENTRYPOINT ["npm", "start", "--port", "3001"]
