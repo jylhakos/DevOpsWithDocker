@@ -55,9 +55,19 @@ Golang and the Debian based images replaced with an Alpine-based image in Docker
 
 # 3.6
 
+The multi-stage builds use multiple FROM statements in the Dockerfile.
+
+Each FROM instruction in the Dockerfile uses a different base, and each of them begins a new stage of the build.
+
+The second FROM instruction starts new build stage with the scratch image as its base.
+
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.6.png?raw=true)
 
 # 3.7
+
+A link to Docker document.
+
+https://docs.docker.com/develop/develop-images/multistage-build/
 
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.7.png?raw=true)
 
