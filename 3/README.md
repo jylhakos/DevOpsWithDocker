@@ -60,3 +60,23 @@ Golang and the Debian based images replaced with an Alpine-based image in Docker
 # 3.7
 
 ![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.7.png?raw=true)
+
+# 3.8
+
+A figure shows a node and pods for the applications in Kubernetes deployment.
+
+Use the external IP address (LoadBalancer) to access the web application.
+
+```
+
+$ curl -v http://<EXTERNAL_IP_ADDRESS>:<PORT>
+
+```
+
+![alt text](https://github.com/jylhakos/DevOpsWithDocker/blob/main/3/3.8.png?raw=true)
+
+## Kubernetes
+
+Kubernetes (k8s) is a platform for managing containerized workloads and services.
+
+https://kubernetes.io/docs/tutorials/stateless-application/expose-external-ip-address/
