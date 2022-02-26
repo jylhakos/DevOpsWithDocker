@@ -147,7 +147,13 @@ Now that the web application Pods are exposed to the Internet through a Kubernet
 
 The web application responds to all requests with the message on port 8080.
 
-where <EXTERNAL_IP_ADDRESS> is the external IP address (LoadBalancer Ingress) of your service, and <PORT> is the value of Port in your service description.
+```
+
+$ curl -v http://<EXTERNAL_IP_ADDRESS>:<PORT>
+
+```
+
+where <EXTERNAL_IP_ADDRESS> is the external IP address (LoadBalancer) of your service, and <PORT> is the value of Port in your service description.
 
 Configure load balancing and port forwarding to access applications in a cluster.
 
